@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PROJETO_MVC_SITE_VENDAS.Context;
+using PROJETO_MVC_SITE_VENDAS.Repositories;
+using PROJETO_MVC_SITE_VENDAS.Repositories.Interfaces;
 
 namespace PROJETO_MVC_SITE_VENDAS;
 public class Startup
@@ -15,6 +17,10 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddTransient<ILancheRepository, LancheRepository>(); 
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>(); 
+
         services.AddControllersWithViews();
     }
 

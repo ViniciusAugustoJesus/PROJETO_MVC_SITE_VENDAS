@@ -8,18 +8,13 @@ namespace PROJETO_MVC_SITE_VENDAS.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        
+
 
         public IActionResult Index()
         {
+           
             return View();
         }
-
-        public IActionResult Demo()
-        {
-            return View();
-        }
-
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
