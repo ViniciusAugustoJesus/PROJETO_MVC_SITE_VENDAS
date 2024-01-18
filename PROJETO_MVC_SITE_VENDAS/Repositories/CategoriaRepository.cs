@@ -1,4 +1,4 @@
-﻿using LanchesMac.Models;
+﻿using PROJETO_MVC_SITE_VENDAS.Models;
 using PROJETO_MVC_SITE_VENDAS.Context;
 using PROJETO_MVC_SITE_VENDAS.Repositories.Interfaces;
 

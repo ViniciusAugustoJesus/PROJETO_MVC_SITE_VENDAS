@@ -1,4 +1,4 @@
-﻿using LanchesMac.Models;
+﻿using PROJETO_MVC_SITE_VENDAS.Models;
 using Microsoft.EntityFrameworkCore;
 using PROJETO_MVC_SITE_VENDAS.Models;
 
@@ -13,6 +13,8 @@ namespace PROJETO_MVC_SITE_VENDAS.Context
 
         public DbSet<Categoria> Categorias { get; set; } 
         public DbSet<Lanche> Lanches { get; set; } 
+
+        public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
 
 
 
