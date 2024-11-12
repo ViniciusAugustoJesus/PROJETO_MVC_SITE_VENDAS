@@ -1,26 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using PROJETO_MVC_SITE_VENDAS.Models;
+﻿using LanchesMac.Models;
+using LanchesMac.Repositories.Interfaces;
+using LanchesMac.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace PROJETO_MVC_SITE_VENDAS.Controllers
+namespace LanchesMac.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILancheRepository _lancheRepository;
 
-
+        public HomeController(ILancheRepository lancheRepository)
+        {
+            _lancheRepository = lancheRepository;
+        }
 
         public IActionResult Index()
         {
-           
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                LanchesPreferidos = _lancheRepository.LanchesPreferidos
+            };
+
+            return View(homeViewModel);
         }
 
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None,
+            NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id
+                ?? HttpContext.TraceIdentifier
+            });
         }
     }
 }

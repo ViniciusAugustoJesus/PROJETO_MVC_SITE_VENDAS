@@ -1,8 +1,7 @@
-﻿using PROJETO_MVC_SITE_VENDAS.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PROJETO_MVC_SITE_VENDAS.Models
+namespace LanchesMac.Models
 {
     [Table("Lanches")]
     public class Lanche
@@ -29,8 +28,8 @@ namespace PROJETO_MVC_SITE_VENDAS.Models
 
         [Required(ErrorMessage = "Informe o preço do lanche")]
         [Display(Name = "Preço")]
-        [Column(TypeName = "decimal(10,2)")]
-        [Range(1, 999.99, ErrorMessage = "O preço deve estar entre 1 e 999,99")]
+        [Column(TypeName ="decimal(10,2)")]
+        [Range(1,999.99,ErrorMessage ="O preço deve estar entre 1 e 999,99")]
         public decimal Preco { get; set; }
 
         [Display(Name = "Caminho Imagem Normal")]

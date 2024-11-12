@@ -1,6 +1,6 @@
-﻿using PROJETO_MVC_SITE_VENDAS.Models;
+﻿using LanchesMac.Models;
 
-namespace PROJETO_MVC_SITE_VENDAS.Repositories.Interfaces
+namespace LanchesMac.Repositories.Interfaces
 {
     public interface ICategoriaRepository
     {

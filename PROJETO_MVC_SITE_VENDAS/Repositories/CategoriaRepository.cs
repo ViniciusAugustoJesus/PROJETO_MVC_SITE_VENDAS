@@ -1,8 +1,8 @@
-﻿using PROJETO_MVC_SITE_VENDAS.Models;
-using PROJETO_MVC_SITE_VENDAS.Context;
-using PROJETO_MVC_SITE_VENDAS.Repositories.Interfaces;
+﻿using LanchesMac.Context;
+using LanchesMac.Models;
+using LanchesMac.Repositories.Interfaces;
 
-namespace PROJETO_MVC_SITE_VENDAS.Repositories
+namespace LanchesMac.Repositories
 {
     public class CategoriaRepository : ICategoriaRepository
     {
@@ -10,7 +10,7 @@ namespace PROJETO_MVC_SITE_VENDAS.Repositories
 
         public CategoriaRepository(AppDbContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         public IEnumerable<Categoria> Categorias => _context.Categorias;
